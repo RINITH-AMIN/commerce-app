@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cart-section {
   color: white;
+  position: relative;
+  padding-top: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.cart-logo {
+  margin-right: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-items-count {
+  position: absolute;
+  right: 1.2rem;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  background: white;
+  width: 1rem;
+  border-radius: 50%;
+  top: 0px;
+}
+
+.product-card {
+  display: flex;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px;
+}
+
+.product-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-details {
+  margin-left: 16px;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ratings span {
+  margin-right: 4px;
+}
+
+.total-reviews {
+  margin-left: 8px;
+  color: #888;
+}
+
+.price {
+  font-size: 18px;
+  color: #B12704; /* Amazon's price color */
+  margin-bottom: 8px;
+}
+
+.buy-button {
+  background-color: #FF9900; /* Amazon's buy button color */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
 }
