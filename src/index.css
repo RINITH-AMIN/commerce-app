@@ -41,7 +41,7 @@ footer {
   display: flex;
 }
 
-section .products {
+section {
   display: grid;
   margin: 1rem;
   gap: 1rem;

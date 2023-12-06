@@ -58,6 +58,15 @@
   margin-bottom: 8px;
 }
 
+.quantity {
+  font-size: 18px;
+  width: 2rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  color: #000000; /* Amazon's price color */
+  margin-bottom: 8px;
+}
+
 .buy-button {
   background-color: #FF9900; /* Amazon's buy button color */
   color: #fff;

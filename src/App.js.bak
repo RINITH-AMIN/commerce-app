@@ -1,15 +1,13 @@
 import "./App.css";
+import catalog from './products.json';
 
-const ProductCard = () => {
-  const product = {
-    name: "Nokia 3310",
-    description:
-      "A reliable Nokia phone with a durable design and long battery life.",
-    price: "$299.99",
-    imageUrl: "https://www.businessinsider.in/photo/53696507/Nokia3310.jpg",
-    ratings: 4.2,
-    totalReviews: 80,
-  };
+const ProductCard = ({ product }) => {
+
+  const updateCartCount = () => {
+    const initialCount = document.querySelector('.cart-items-count').innerHTML;
+    const updatedCount = Number(initialCount) + 1;
+    document.querySelector('.cart-items-count').innerHTML = updatedCount;
+  }
 
   return (
     <div className="product-card">
@@ -29,7 +27,7 @@ const ProductCard = () => {
         </div>
         <p className="price">Price: {product.price}</p>
         <input type="text" name="quantity" className="quantity" defaultValue={1} />
-        <button className="buy-button">Add to Cart</button>
+        <button className="buy-button" onClick={updateCartCount}>Add to Cart</button>
       </div>
     </div>
   );
@@ -58,7 +56,7 @@ function App() {
         </div>
       </header>
       <section>
-        <ProductCard />
+        {catalog.products.map(product=> <ProductCard key={product.name} product={product}/>)}
       </section>
       <footer>
         <ul>
