@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 
 const ProductCard = () => {
@@ -28,7 +29,6 @@ const ProductCard = () => {
           <span className="total-reviews">{product.totalReviews} reviews</span>
         </div>
         <p className="price">Price: {product.price}</p>
-        <input type="text" name="quantity" className="quantity" defaultValue={1} />
         <button className="buy-button">Add to Cart</button>
       </div>
     </div>
@@ -38,7 +38,8 @@ const ProductCard = () => {
 function App() {
 
   return (
-    <main>
+
+    <React.Fragment>
       <header>
         <img
           src="https://apexit.com/wp-content/uploads/2022/02/apexit-white-white2.png"
@@ -70,7 +71,7 @@ function App() {
           </li>
         </ul>
       </footer>
-    </main>
+    </React.Fragment>
   );
 }
 
