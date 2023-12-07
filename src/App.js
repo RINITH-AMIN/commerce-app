@@ -1,21 +1,49 @@
-import React from "react";
 import "./App.css";
+import catalog from './products.json';
 
-const ProductCard = () => {
-  const product = {
-    name: "Nokia 3310",
-    description:
-      "A reliable Nokia phone with a durable design and long battery life.",
-    price: "$299.99",
-    imageUrl: "https://www.businessinsider.in/photo/53696507/Nokia3310.jpg",
-    ratings: 4.2,
-    totalReviews: 80,
-  };
+const ProductCard = ({ product }) => {
+
+  const updateCartCount = () => {
+    const initialQuantity = document.querySelector('.cart-items-count').innerHTML;
+    const quantity = document.getElementById(`${product.name}-quantity`).value;
+    const updatedQuantity = Number(initialQuantity) + Number(quantity)
+    document.querySelector('.cart-items-count').innerHTML = updatedQuantity;
+  }
+
+  const handleUpdateQuantity = (event) => {
+    const value = event.target.value;
+    const quantityErrorElement = document.getElementById(`${product.name}-quantity-error`);
+    const addToCartButton = document.getElementById(`${product.name}-add-to-cart`);
+
+    if (value > 10) {
+      addToCartButton.disabled = true;
+      quantityErrorElement.innerHTML = 'Maximum allowed quantity is 10';
+      quantityErrorElement.style = 'color:red'
+    } else {
+      addToCartButton.disabled = false;
+      quantityErrorElement.innerHTML = '';
+    }
+  }
+
+  function zoomImage() {
+    const image = document.getElementById(`${product.name}-logo`);
+    // Apply the zoom effect by adjusting the transform property
+    image.style.transform = `scale(1.1)`;
+  }
+
+  function zoomOut() {
+    const image = document.getElementById(`${product.name}-logo`);
+    // Apply the zoom effect by adjusting the transform property
+    image.style.transform = `scale(1)`;
+  }
+
 
   return (
     <div className="product-card">
-      <div className="product-image">
-        <img src={product.imageUrl} alt={product.name} />
+      <div className="product-image"
+        onMouseEnter={zoomImage}
+        onMouseLeave={zoomOut}>
+        <img id={`${product.name}-logo`} src={product.imageUrl} alt={product.name} />
       </div>
       <div className="product-details">
         <h2>{product.name}</h2>
@@ -29,7 +57,9 @@ const ProductCard = () => {
           <span className="total-reviews">{product.totalReviews} reviews</span>
         </div>
         <p className="price">Price: {product.price}</p>
-        <button className="buy-button">Add to Cart</button>
+        <input id={`${product.name}-quantity`} onChange={handleUpdateQuantity} type="text" name="quantity" className="quantity" defaultValue={1} />
+        <button className="buy-button" id={`${product.name}-add-to-cart`} onClick={updateCartCount}>Add to Cart</button>
+        <p id={`${product.name}-quantity-error`}></p>
       </div>
     </div>
   );
@@ -38,8 +68,7 @@ const ProductCard = () => {
 function App() {
 
   return (
-
-    <React.Fragment>
+    <main>
       <header>
         <img
           src="https://apexit.com/wp-content/uploads/2022/02/apexit-white-white2.png"
@@ -59,7 +88,7 @@ function App() {
         </div>
       </header>
       <section>
-        <ProductCard />
+        {catalog.products.map(product => <ProductCard key={product.name} product={product} />)}
       </section>
       <footer>
         <ul>
@@ -71,7 +100,7 @@ function App() {
           </li>
         </ul>
       </footer>
-    </React.Fragment>
+    </main>
   );
 }
 
