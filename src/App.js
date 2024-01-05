@@ -1,7 +1,15 @@
+import { useState } from "react";
 import "./App.css";
 import catalog from './products.json';
+import { useEffect } from "react";
+import { useContext } from "react";
+import { createContext } from "react";
 
-const ProductCard = ({ product }) => {
+const ProductContext = createContext();
+
+const ProductCard = () => {
+
+  const product = useContext(ProductContext);
 
   const updateCartCount = () => {
     const initialQuantity = document.querySelector('.cart-items-count').innerHTML;
@@ -67,6 +75,12 @@ const ProductCard = ({ product }) => {
 
 function App() {
 
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    cart.length > 0 && alert('Product has been added to the cart')
+  }, [cart]);
+
   return (
     <main>
       <header>
@@ -88,7 +102,11 @@ function App() {
         </div>
       </header>
       <section>
-        {catalog.products.map(product => <ProductCard key={product.name} product={product} />)}
+        {catalog.products.map(product =>
+          <ProductContext.Provider key={product.name} value={product}>
+            <ProductCard />
+          </ProductContext.Provider>
+        )}
       </section>
       <footer>
         <ul>
