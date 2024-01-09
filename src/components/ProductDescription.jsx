@@ -1,40 +1,39 @@
-import { useContext, useState } from "react";
+// ProductDescription.js
+
+import React, { useContext, useState } from "react";
 import AppContext from "../context/Context";
 
-// ProductCard component
-const ProductCard = () => {
-  // Destructuring values from AppContext
-  const { product, cart, updateCart, handleNavigation } =
-    useContext(AppContext);
-
-  const gotoProductsPage = () => handleNavigation(`/product/${product.id}`);
+const ProductDescription = () => {
+  const { product, cart, updateCart, gotoProductsPage } = useContext(AppContext);
 
   const existingProduct = cart.find((item) => item.id === product.id);
 
   // State for managing quantity input
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(existingProduct?.quantity || 1);
   // State for managing quantity error message
   const [quantityError, setQuantityError] = useState("");
   // State for managing zoom effect
   const [isZoomed, setIsZoomed] = useState(false);
 
-  // Function to update the cart and add the current product
+  // Function to update the cart and add/update the current product
   const updateCartItems = () => {
-    if (existingProduct) {
-      // If the product already exists in the cart, update the quantity
-      const updatedCart = cart.map((item) => {
-        if (item.id === product.id) {
-          return { ...item, quantity: item.quantity + Number(quantity) };
-        }
-        return item;
-      });
-      updateCart(updatedCart);
-    } else {
-      // If the product is not in the cart, add it
-      updateCart((prevCart) => [
-        ...prevCart,
-        { ...product, quantity: Number(quantity) },
-      ]);
+    if (quantityError === "") {
+      if (existingProduct) {
+        // If the product already exists in the cart, update the quantity
+        const updatedCart = cart.map((item) => {
+          if (item.id === product.id) {
+            return { ...item, quantity: Number(quantity) };
+          }
+          return item;
+        });
+        updateCart(updatedCart);
+      } else {
+        // If the product is not in the cart, add it
+        updateCart((prevCart) => [
+          ...prevCart,
+          { ...product, quantity: Number(quantity) },
+        ]);
+      }
     }
   };
 
@@ -60,9 +59,12 @@ const ProductCard = () => {
     setIsZoomed(false);
   };
 
-  // Rendering the product card with dynamic values
+  // Rendering the product description with dynamic values
   return (
-    <div className="product-card">
+    <div className="product-description">
+      <button className="go-home margin-bottom" onClick={gotoProductsPage}>
+        Go Back to Products Page
+      </button>
       <div
         className={`product-image ${isZoomed ? "zoomed" : ""}`}
         onMouseEnter={zoomImage}
@@ -75,8 +77,9 @@ const ProductCard = () => {
         />
       </div>
       <div className="product-details">
-        <h2 onClick={gotoProductsPage}>{product.name}</h2>
-        <div className="ratings">
+        <h2>{product.name}</h2>
+        <p>{product.description}</p>
+        <div className="ratings justify-center">
           {Array(Math.round(product.ratings))
             .fill(null)
             .map((_, index) => (
@@ -91,7 +94,7 @@ const ProductCard = () => {
           type="text"
           name="quantity"
           className="quantity"
-          value={existingProduct?.quantity || quantity}
+          value={quantity}
         />
         <button
           className="buy-button"
@@ -109,4 +112,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default ProductDescription;

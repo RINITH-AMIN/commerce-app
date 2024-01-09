@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import AppContext from "./context/Context";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
+import ProductDescription from "./components/ProductDescription";
 
 // App component
 function App() {
@@ -35,6 +36,7 @@ function App() {
     cart.length > 0 && alert("Product has been added to the cart");
   }, [cart]);
 
+
   // Rendering the main component with product cards
   return (
     <main>
@@ -49,7 +51,7 @@ function App() {
         <div className="cart-section" onClick={gotoCartPage}>
           <img
             className="cart-logo"
-            src="cart.svg"
+            src={process.env.PUBLIC_URL + "/cart.svg"}
             alt="cart"
             width={25}
             height={25}
@@ -64,7 +66,7 @@ function App() {
             catalog?.products?.map((product) => (
               <AppContext.Provider
                 key={product.name}
-                value={{ cart, product, updateCart }}
+                value={{ cart, product, updateCart, handleNavigation }}
               >
                 <ProductCard />
               </AppContext.Provider>
@@ -73,6 +75,18 @@ function App() {
         {route === "/cart" && (
           <AppContext.Provider value={{ cart, updateCart, gotoProductsPage }}>
             <Cart />
+          </AppContext.Provider>
+        )}
+        {route.includes("/product") && (
+          <AppContext.Provider
+            value={{
+              product: catalog?.products?.find(item=> item.id === Number(route.split("/")[2])),
+              cart,
+              updateCart,
+              gotoProductsPage,
+            }}
+          >
+            <ProductDescription />
           </AppContext.Provider>
         )}
       </section>

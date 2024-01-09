@@ -87,6 +87,10 @@
   cursor: pointer;
 }
 
+.product-details h2 {
+  cursor: pointer;
+}
+
 .buy-button:disabled {
   opacity: 0.8;
   cursor: not-allowed;
@@ -104,6 +108,21 @@
   border: 1px solid;
   padding: 0.5rem;
   border-radius: 1rem;
+}
+
+.margin-bottom {
+  margin-bottom: 2rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.product-description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .cart-items-list {
