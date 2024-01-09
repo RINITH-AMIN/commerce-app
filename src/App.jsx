@@ -32,7 +32,7 @@ function App() {
 
   // Rendering the main component with product cards
   return (
-    <main>
+    <React.Fragment>
       <header>
         <img
           src="https://apexit.com/wp-content/uploads/2022/02/apexit-white-white2.png"
@@ -95,7 +95,7 @@ function App() {
           </li>
         </ul>
       </footer>
-    </main>
+    </React.Fragment>
   );
 }
 
