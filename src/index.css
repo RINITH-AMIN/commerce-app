@@ -20,8 +20,6 @@ main {
   grid-template-rows: auto 1fr auto;
 }
 
-
-
 ul {
   display: flex;
   justify-content: space-around;
@@ -30,7 +28,7 @@ ul {
 }
 
 ul li a {
-  color: white
+  color: white;
 }
 
 footer {

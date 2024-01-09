@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import catalog from './products.json';
+import catalog from "./products.json";
 import { useEffect } from "react";
 import AppContext from "./context/Context";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
-
-
 
 // App component
 function App() {
@@ -24,17 +22,17 @@ function App() {
 
   // Function to navigate to the cart page
   const gotoCartPage = () => {
-    handleNavigation('/cart');
+    handleNavigation("/cart");
   };
 
   // Function to navigate to the home/products page
   const gotoProductsPage = () => {
-    handleNavigation('/');
+    handleNavigation("/");
   };
 
   // Effect to show an alert when a product is added to the cart
   useEffect(() => {
-    cart.length > 0 && alert('Product has been added to the cart');
+    cart.length > 0 && alert("Product has been added to the cart");
   }, [cart]);
 
   // Rendering the main component with product cards
@@ -62,19 +60,21 @@ function App() {
       <section>
         <div className="products">
           {/* Mapping through products and providing context to each ProductCard */}
-          {route === '/' && catalog?.products?.map(product =>
-            <AppContext.Provider key={product.name} value={{ cart, product, updateCart }}>
-              <ProductCard />
-            </AppContext.Provider>
-          )}
+          {route === "/" &&
+            catalog?.products?.map((product) => (
+              <AppContext.Provider
+                key={product.name}
+                value={{ cart, product, updateCart }}
+              >
+                <ProductCard />
+              </AppContext.Provider>
+            ))}
         </div>
-        {
-          route === '/cart' &&
-          (<AppContext.Provider value={{ cart, updateCart, gotoProductsPage }}>
+        {route === "/cart" && (
+          <AppContext.Provider value={{ cart, updateCart, gotoProductsPage }}>
             <Cart />
           </AppContext.Provider>
-          )
-        }
+        )}
       </section>
       <footer>
         <ul>

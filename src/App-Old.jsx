@@ -1,29 +1,33 @@
 import "./App.css";
-import catalog from './products.json';
+import catalog from "./products.json";
 
 const ProductCard = ({ product }) => {
-
   const updateCartCount = () => {
-    const initialQuantity = document.querySelector('.cart-items-count').innerHTML;
+    const initialQuantity =
+      document.querySelector(".cart-items-count").innerHTML;
     const quantity = document.getElementById(`${product.name}-quantity`).value;
-    const updatedQuantity = Number(initialQuantity) + Number(quantity)
-    document.querySelector('.cart-items-count').innerHTML = updatedQuantity;
-  }
+    const updatedQuantity = Number(initialQuantity) + Number(quantity);
+    document.querySelector(".cart-items-count").innerHTML = updatedQuantity;
+  };
 
   const handleUpdateQuantity = (event) => {
     const value = event.target.value;
-    const quantityErrorElement = document.getElementById(`${product.name}-quantity-error`);
-    const addToCartButton = document.getElementById(`${product.name}-add-to-cart`);
+    const quantityErrorElement = document.getElementById(
+      `${product.name}-quantity-error`
+    );
+    const addToCartButton = document.getElementById(
+      `${product.name}-add-to-cart`
+    );
 
     if (value > 10) {
       addToCartButton.disabled = true;
-      quantityErrorElement.innerHTML = 'Maximum allowed quantity is 10';
-      quantityErrorElement.style = 'color:red'
+      quantityErrorElement.innerHTML = "Maximum allowed quantity is 10";
+      quantityErrorElement.style = "color:red";
     } else {
       addToCartButton.disabled = false;
-      quantityErrorElement.innerHTML = '';
+      quantityErrorElement.innerHTML = "";
     }
-  }
+  };
 
   function zoomImage() {
     const image = document.getElementById(`${product.name}-logo`);
@@ -37,13 +41,18 @@ const ProductCard = ({ product }) => {
     image.style.transform = `scale(1)`;
   }
 
-
   return (
     <div className="product-card">
-      <div className="product-image"
+      <div
+        className="product-image"
         onMouseEnter={zoomImage}
-        onMouseLeave={zoomOut}>
-        <img id={`${product.name}-logo`} src={product.imageUrl} alt={product.name} />
+        onMouseLeave={zoomOut}
+      >
+        <img
+          id={`${product.name}-logo`}
+          src={product.imageUrl}
+          alt={product.name}
+        />
       </div>
       <div className="product-details">
         <h2>{product.name}</h2>
@@ -57,8 +66,21 @@ const ProductCard = ({ product }) => {
           <span className="total-reviews">{product.totalReviews} reviews</span>
         </div>
         <p className="price">Price: {product.price}</p>
-        <input id={`${product.name}-quantity`} onChange={handleUpdateQuantity} type="text" name="quantity" className="quantity" defaultValue={1} />
-        <button className="buy-button" id={`${product.name}-add-to-cart`} onClick={updateCartCount}>Add to Cart</button>
+        <input
+          id={`${product.name}-quantity`}
+          onChange={handleUpdateQuantity}
+          type="text"
+          name="quantity"
+          className="quantity"
+          defaultValue={1}
+        />
+        <button
+          className="buy-button"
+          id={`${product.name}-add-to-cart`}
+          onClick={updateCartCount}
+        >
+          Add to Cart
+        </button>
         <p id={`${product.name}-quantity-error`}></p>
       </div>
     </div>
@@ -66,7 +88,6 @@ const ProductCard = ({ product }) => {
 };
 
 function App() {
-
   return (
     <main>
       <header>
@@ -88,7 +109,9 @@ function App() {
         </div>
       </header>
       <section>
-        {catalog.products.map(product => <ProductCard key={product.name} product={product} />)}
+        {catalog.products.map((product) => (
+          <ProductCard key={product.name} product={product} />
+        ))}
       </section>
       <footer>
         <ul>
