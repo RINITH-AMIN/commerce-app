@@ -53,10 +53,7 @@ const ProductDescription = () => {
   };
 
   useEffect(() => {
-    if (
-      existingProduct?.quantity &&
-      existingProduct.quantity + quantity > 10
-    ) {
+    if (existingProduct?.quantity && existingProduct.quantity + quantity > 10) {
       setQuantityError("Maximum allowed quantity is 10");
     } else {
       setQuantityError("");
