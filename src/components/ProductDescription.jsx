@@ -22,7 +22,7 @@ const ProductDescription = () => {
         // If the product already exists in the cart, update the quantity
         const updatedCart = cart.map((item) => {
           if (item.id === product.id) {
-            return { ...item, quantity: Number(quantity) };
+            return { ...item, quantity: item.quantity + Number(quantity) };
           }
           return item;
         });
@@ -94,7 +94,7 @@ const ProductDescription = () => {
           type="text"
           name="quantity"
           className="quantity"
-          value={quantity}
+          value={existingProduct?.quantity || quantity}
         />
         <button
           className="buy-button"
