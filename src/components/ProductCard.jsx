@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import AppContext from "../context/Context";
 
 // ProductCard component
@@ -51,4 +51,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);

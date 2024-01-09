@@ -1,6 +1,4 @@
-// ProductDescription.js
-
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import AppContext from "../context/Context";
 
 const ProductDescription = () => {
@@ -17,7 +15,7 @@ const ProductDescription = () => {
   const [isZoomed, setIsZoomed] = useState(false);
 
   // Function to update the cart and add/update the current product
-  const updateCartItems = () => {
+  const updateCartItems = useCallback(() => {
     if (quantityError === "") {
       if (existingProduct) {
         // If the product already exists in the cart, update the quantity
@@ -36,10 +34,10 @@ const ProductDescription = () => {
         ]);
       }
     }
-  };
+  }, [cart, existingProduct, product, quantity, quantityError, updateCart]);
 
   // Event handler for updating the quantity and checking for errors
-  const handleUpdateQuantity = (event) => {
+  const handleUpdateQuantity = useCallback((event) => {
     const value = Number(event.target.value);
     if (value >= 0 && existingProduct?.quantity <= 10) {
       setQuantityError("");
@@ -50,7 +48,7 @@ const ProductDescription = () => {
       setQuantityError("The maximum allowed quantity is 10.");
       setQuantity(value);
     }
-  };
+  }, [existingProduct?.quantity]);
 
   useEffect(() => {
     if (existingProduct?.quantity && existingProduct.quantity + quantity > 10) {
@@ -123,4 +121,4 @@ const ProductDescription = () => {
   );
 };
 
-export default ProductDescription;
+export default React.memo(ProductDescription);

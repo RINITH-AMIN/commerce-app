@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import catalog from "./products.json";
-import { useEffect } from "react";
 import AppContext from "./context/Context";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
@@ -30,11 +29,6 @@ function App() {
   const gotoProductsPage = () => {
     handleNavigation("/");
   };
-
-  // Effect to show an alert when a product is added to the cart
-  useEffect(() => {
-    cart.length > 0 && alert("Product has been added to the cart");
-  }, [cart]);
 
   // Rendering the main component with product cards
   return (

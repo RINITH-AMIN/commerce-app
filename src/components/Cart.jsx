@@ -1,6 +1,4 @@
-// Cart.js
-
-import React, { useContext } from "react";
+import React, { useCallback, useContext } from "react";
 import AppContext from "../context/Context";
 
 const Cart = () => {
@@ -8,26 +6,26 @@ const Cart = () => {
   const { cart, updateCart, gotoProductsPage } = useContext(AppContext);
 
   // Function to handle incrementing the quantity of a cart item
-  const incrementQuantity = (index) => {
+  const incrementQuantity = useCallback((index) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity++;
     updateCart(updatedCart);
-  };
+  }, [cart, updateCart]);
 
   // Function to handle decrementing the quantity of a cart item
-  const decrementQuantity = (index) => {
+  const decrementQuantity = useCallback((index) => {
     const updatedCart = [...cart];
     if (updatedCart[index].quantity > 1) {
       updatedCart[index].quantity--;
       updateCart(updatedCart);
     }
-  };
+  }, [cart, updateCart]);
 
   // Function to handle removing a product from the cart
-  const removeFromCart = (index) => {
+  const removeFromCart = useCallback((index) => {
     const updatedCart = cart.filter((_, i) => i !== index);
     updateCart(updatedCart);
-  };
+  }, [cart, updateCart]);
 
   // Function to handle the checkout process
   const handleCheckout = () => {
@@ -72,4 +70,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default React.memo(Cart);
