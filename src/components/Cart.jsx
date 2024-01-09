@@ -31,7 +31,7 @@ const Cart = () => {
   const handleCheckout = () => {
     // Implement your checkout logic here
     // For example, you can display a confirmation message or redirect to a checkout page
-    alert("Checkout clicked! Implement your checkout logic here.");
+    alert("Checkout clicked! We need to implement checkout logic here.");
   };
 
   return (
