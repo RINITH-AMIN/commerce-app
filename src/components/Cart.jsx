@@ -38,7 +38,7 @@ const Cart = () => {
     <div className="cart-container">
       <h2>Your Cart {cart.length <= 0 && `is Empty`}</h2>
       <button className="go-home" onClick={gotoProductsPage}>
-        Go Back to Products Page
+      Go back to the Products Page.
       </button>
       <ul className="cart-items-list">
         {cart?.map((item, index) => (

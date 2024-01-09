@@ -72,7 +72,7 @@ const ProductDescription = () => {
   return (
     <div className="product-description">
       <button className="go-home margin-bottom" onClick={gotoProductsPage}>
-        Go Back to Products Page
+      Go back to the Products Page
       </button>
       <div
         className={`product-image ${isZoomed ? "zoomed" : ""}`}
