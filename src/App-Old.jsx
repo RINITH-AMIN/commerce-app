@@ -13,10 +13,10 @@ const ProductCard = ({ product }) => {
   const handleUpdateQuantity = (event) => {
     const value = event.target.value;
     const quantityErrorElement = document.getElementById(
-      `${product.name}-quantity-error`
+      `${product.name}-quantity-error`,
     );
     const addToCartButton = document.getElementById(
-      `${product.name}-add-to-cart`
+      `${product.name}-add-to-cart`,
     );
 
     if (value > 10) {

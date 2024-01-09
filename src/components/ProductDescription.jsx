@@ -1,10 +1,11 @@
 // ProductDescription.js
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../context/Context";
 
 const ProductDescription = () => {
-  const { product, cart, updateCart, gotoProductsPage } = useContext(AppContext);
+  const { product, cart, updateCart, gotoProductsPage } =
+    useContext(AppContext);
 
   const existingProduct = cart.find((item) => item.id === product.id);
 
@@ -39,15 +40,28 @@ const ProductDescription = () => {
 
   // Event handler for updating the quantity and checking for errors
   const handleUpdateQuantity = (event) => {
-    const value = event.target.value;
-    if (value > 10) {
-      setQuantityError("Maximum allowed quantity is 10");
-      setQuantity(value);
-    } else {
+    const value = Number(event.target.value);
+    if (value >= 0 && existingProduct?.quantity <= 10) {
       setQuantityError("");
+      setQuantity(value);
+    } else if (value === 0) {
+      setQuantityError("The quantity must be greater than zero.");
+    } else {
+      setQuantityError("The maximum allowed quantity is 10.");
       setQuantity(value);
     }
   };
+
+  useEffect(() => {
+    if (
+      existingProduct?.quantity &&
+      existingProduct.quantity + quantity > 10
+    ) {
+      setQuantityError("Maximum allowed quantity is 10");
+    } else {
+      setQuantityError("");
+    }
+  }, [existingProduct, quantity]);
 
   // Function to apply zoom effect on image hover
   const zoomImage = () => {
@@ -94,7 +108,7 @@ const ProductDescription = () => {
           type="text"
           name="quantity"
           className="quantity"
-          value={existingProduct?.quantity || quantity}
+          defaultValue={quantity}
         />
         <button
           className="buy-button"

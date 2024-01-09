@@ -36,7 +36,6 @@ function App() {
     cart.length > 0 && alert("Product has been added to the cart");
   }, [cart]);
 
-
   // Rendering the main component with product cards
   return (
     <main>
@@ -66,7 +65,7 @@ function App() {
             catalog?.products?.map((product) => (
               <AppContext.Provider
                 key={product.name}
-                value={{ cart, product, updateCart, handleNavigation }}
+                value={{ product, handleNavigation }}
               >
                 <ProductCard />
               </AppContext.Provider>
@@ -80,7 +79,9 @@ function App() {
         {route.includes("/product") && (
           <AppContext.Provider
             value={{
-              product: catalog?.products?.find(item=> item.id === Number(route.split("/")[2])),
+              product: catalog?.products?.find(
+                (item) => item.id === Number(route.split("/")[2]),
+              ),
               cart,
               updateCart,
               gotoProductsPage,

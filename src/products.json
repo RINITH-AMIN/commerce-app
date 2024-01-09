@@ -1,113 +1,112 @@
 {
-    "products": [
-      {
-        "name": "iPhone 15 Pro Max",
-        "description": "The latest iPhone with advanced features and powerful performance.",
-        "price": "$1,199.99",
-        "id": 1,
-        "imageUrl": "https://m.media-amazon.com/images/I/81dT7CUY6GL._AC_UY218_.jpg",
-        "ratings": 4.7,
-        "totalReviews": 150
-      },
-      {
-        "name": "Nokia 3310",
-        "description": "A reliable Nokia phone with a durable design and long battery life.",
-        "price": "$299.99",
-        "id": 2,
-        "imageUrl": "https://www.businessinsider.in/photo/53696507/Nokia3310.jpg",
-        "ratings": 4.2,
-        "totalReviews": 80
-      },
-      {
-        "name": "Toshiba T1100",
-        "description": "The Toshiba T1100 is a laptop manufactured by Toshiba in 1985",
-        "price": "$2999.99",
-        "id": 3,
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Toshiba_T1100_In_Betrieb.jpg",
-        "ratings": 4.2,
-        "totalReviews": 80
-      },
-      {
-        "name": "Samsung Galaxy S22",
-        "description": "A high-end smartphone with a stunning display and cutting-edge camera features.",
-        "price": "$1,099.99",
-        "id": 4,
-        "imageUrl": "https://m.media-amazon.com/images/I/41e8Xk+am-L._SY300_SX300_.jpg",
-        "ratings": 3.8,
-        "totalReviews": 120
-      },
-      {
-        "name": "Sony WH-1000XM4",
-        "description": "Premium wireless noise-canceling headphones for an immersive audio experience.",
-        "price": "$349.99",
-        "id": 5,
-        "imageUrl": "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_UY218_.jpg",
-        "ratings": 4.9,
-        "totalReviews": 200
-      },
-      {
-        "name": "Dell XPS 13",
-        "description": "Ultra-thin and powerful laptop with a stunning InfinityEdge display.",
-        "price": "$1,499.99",
-        "id": 6,
-        "imageUrl": "https://m.media-amazon.com/images/I/61rvR2b3flL._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 1.5,
-        "totalReviews": 90
-      },
-      {
-        "name": "Canon EOS R5",
-        "description": "Mirrorless camera with 8K video recording capabilities and advanced autofocus.",
-        "price": "$3,899.99",
-        "id": 7,
-        "imageUrl": "https://m.media-amazon.com/images/I/61lKwvtzRzL._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 4.6,
-        "totalReviews": 150
-      },
-      {
-        "name": "Fitbit Charge 5",
-        "description": "Advanced fitness tracker with built-in GPS and health monitoring features.",
-        "price": "$179.99",
-        "id": 7,
-        "imageUrl": "https://m.media-amazon.com/images/I/613MGc8BguL._AC_UL640_FMwebp_QL65_.jpg",
-        "ratings": 2.4,
-        "totalReviews": 120
-      },
-      {
-        "name": "LG C1 OLED TV",
-        "description": "4K OLED TV with stunning picture quality and Dolby Vision support.",
-        "price": "$2,499.99",
-        "id": 8,
-        "imageUrl": "https://m.media-amazon.com/images/I/71tU03UNI1L._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 4.8,
-        "totalReviews": 180
-      },
-      {
-        "name": "GoPro Hero 10 Black",
-        "description": "High-performance action camera with 5.3K video recording and improved stabilization.",
-        "price": "$499.99",
-        "id": 9,
-        "imageUrl": "https://m.media-amazon.com/images/I/6163A0JLv9L._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 4.7,
-        "totalReviews": 100
-      },
-      {
-        "name": "Bose QuietComfort Earbuds",
-        "description": "True wireless earbuds with world-class noise cancellation and clear audio.",
-        "price": "$279.99",
-        "id": 10,
-        "imageUrl": "https://m.media-amazon.com/images/I/6166x7VizQL._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 4.6,
-        "totalReviews": 150
-      },
-      {
-        "name": "Microsoft Surface Laptop 4",
-        "description": "Sleek and powerful laptop with a high-resolution PixelSense touchscreen.",
-        "price": "$1,299.99",
-        "id": 11,
-        "imageUrl": "https://m.media-amazon.com/images/I/717wZ9Wh4eL._AC_UY436_FMwebp_QL65_.jpg",
-        "ratings": 4.5,
-        "totalReviews": 110
-      }
-    ]
-  }
-  
+  "products": [
+    {
+      "name": "iPhone 15 Pro Max",
+      "description": "The latest iPhone with advanced features and powerful performance.",
+      "price": "$1,199.99",
+      "id": 1,
+      "imageUrl": "https://m.media-amazon.com/images/I/81dT7CUY6GL._AC_UY218_.jpg",
+      "ratings": 4.7,
+      "totalReviews": 150
+    },
+    {
+      "name": "Nokia 3310",
+      "description": "A reliable Nokia phone with a durable design and long battery life.",
+      "price": "$299.99",
+      "id": 2,
+      "imageUrl": "https://www.businessinsider.in/photo/53696507/Nokia3310.jpg",
+      "ratings": 4.2,
+      "totalReviews": 80
+    },
+    {
+      "name": "Toshiba T1100",
+      "description": "The Toshiba T1100 is a laptop manufactured by Toshiba in 1985",
+      "price": "$2999.99",
+      "id": 3,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Toshiba_T1100_In_Betrieb.jpg",
+      "ratings": 4.2,
+      "totalReviews": 80
+    },
+    {
+      "name": "Samsung Galaxy S22",
+      "description": "A high-end smartphone with a stunning display and cutting-edge camera features.",
+      "price": "$1,099.99",
+      "id": 4,
+      "imageUrl": "https://m.media-amazon.com/images/I/41e8Xk+am-L._SY300_SX300_.jpg",
+      "ratings": 3.8,
+      "totalReviews": 120
+    },
+    {
+      "name": "Sony WH-1000XM4",
+      "description": "Premium wireless noise-canceling headphones for an immersive audio experience.",
+      "price": "$349.99",
+      "id": 5,
+      "imageUrl": "https://m.media-amazon.com/images/I/71o8Q5XJS5L._AC_UY218_.jpg",
+      "ratings": 4.9,
+      "totalReviews": 200
+    },
+    {
+      "name": "Dell XPS 13",
+      "description": "Ultra-thin and powerful laptop with a stunning InfinityEdge display.",
+      "price": "$1,499.99",
+      "id": 6,
+      "imageUrl": "https://m.media-amazon.com/images/I/61rvR2b3flL._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 1.5,
+      "totalReviews": 90
+    },
+    {
+      "name": "Canon EOS R5",
+      "description": "Mirrorless camera with 8K video recording capabilities and advanced autofocus.",
+      "price": "$3,899.99",
+      "id": 7,
+      "imageUrl": "https://m.media-amazon.com/images/I/61lKwvtzRzL._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 4.6,
+      "totalReviews": 150
+    },
+    {
+      "name": "Fitbit Charge 5",
+      "description": "Advanced fitness tracker with built-in GPS and health monitoring features.",
+      "price": "$179.99",
+      "id": 7,
+      "imageUrl": "https://m.media-amazon.com/images/I/613MGc8BguL._AC_UL640_FMwebp_QL65_.jpg",
+      "ratings": 2.4,
+      "totalReviews": 120
+    },
+    {
+      "name": "LG C1 OLED TV",
+      "description": "4K OLED TV with stunning picture quality and Dolby Vision support.",
+      "price": "$2,499.99",
+      "id": 8,
+      "imageUrl": "https://m.media-amazon.com/images/I/71tU03UNI1L._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 4.8,
+      "totalReviews": 180
+    },
+    {
+      "name": "GoPro Hero 10 Black",
+      "description": "High-performance action camera with 5.3K video recording and improved stabilization.",
+      "price": "$499.99",
+      "id": 9,
+      "imageUrl": "https://m.media-amazon.com/images/I/6163A0JLv9L._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 4.7,
+      "totalReviews": 100
+    },
+    {
+      "name": "Bose QuietComfort Earbuds",
+      "description": "True wireless earbuds with world-class noise cancellation and clear audio.",
+      "price": "$279.99",
+      "id": 10,
+      "imageUrl": "https://m.media-amazon.com/images/I/6166x7VizQL._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 4.6,
+      "totalReviews": 150
+    },
+    {
+      "name": "Microsoft Surface Laptop 4",
+      "description": "Sleek and powerful laptop with a high-resolution PixelSense touchscreen.",
+      "price": "$1,299.99",
+      "id": 11,
+      "imageUrl": "https://m.media-amazon.com/images/I/717wZ9Wh4eL._AC_UY436_FMwebp_QL65_.jpg",
+      "ratings": 4.5,
+      "totalReviews": 110
+    }
+  ]
+}
