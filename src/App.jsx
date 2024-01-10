@@ -35,7 +35,7 @@ function App() {
     <React.Fragment>
       <header>
         <img
-          src="logo.png"
+          src={process.env.PUBLIC_URL + "/logo.png"}
           onClick={gotoProductsPage}
           height={75}
           width={80}
