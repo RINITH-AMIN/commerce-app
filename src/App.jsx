@@ -35,10 +35,10 @@ function App() {
     <React.Fragment>
       <header>
         <img
-          src="https://apexit.com/wp-content/uploads/2022/02/apexit-white-white2.png"
+          src="logo.png"
           onClick={gotoProductsPage}
-          height={80}
-          width={160}
+          height={75}
+          width={80}
           alt="logo"
         />
         <div className="cart-section" onClick={gotoCartPage}>

@@ -92,7 +92,7 @@ function App() {
     <main>
       <header>
         <img
-          src="https://apexit.com/wp-content/uploads/2022/02/apexit-white-white2.png"
+          src="logo.png"
           height={80}
           width={160}
           alt="logo"
