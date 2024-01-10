@@ -12,7 +12,7 @@ const Cart = () => {
       updatedCart[index].quantity++;
       updateCart(updatedCart);
     },
-    [cart, updateCart]
+    [cart, updateCart],
   );
 
   // Function to handle decrementing the quantity of a cart item
@@ -24,7 +24,7 @@ const Cart = () => {
         updateCart(updatedCart);
       }
     },
-    [cart, updateCart]
+    [cart, updateCart],
   );
 
   // Function to handle removing a product from the cart
@@ -33,7 +33,7 @@ const Cart = () => {
       const updatedCart = cart.filter((_, i) => i !== index);
       updateCart(updatedCart);
     },
-    [cart, updateCart]
+    [cart, updateCart],
   );
 
   // Function to calculate the total quantity in the cart
@@ -44,7 +44,11 @@ const Cart = () => {
   // Function to calculate the total price of items in the cart
   const getTotalPrice = () => {
     return cart
-      .reduce((total, item) => total + item.quantity * Number(item.price.split('$')[1]), 0)
+      .reduce(
+        (total, item) =>
+          total + item.quantity * Number(item.price.split("$")[1]),
+        0,
+      )
       .toFixed(2);
   };
 

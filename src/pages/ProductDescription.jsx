@@ -37,18 +37,21 @@ const ProductDescription = () => {
   }, [cart, existingProduct, product, quantity, quantityError, updateCart]);
 
   // Event handler for updating the quantity and checking for errors
-  const handleUpdateQuantity = useCallback((event) => {
-    const value = Number(event.target.value);
-    if (value >= 0 && existingProduct?.quantity <= 10) {
-      setQuantityError("");
-      setQuantity(value);
-    } else if (value === 0) {
-      setQuantityError("The quantity must be greater than zero.");
-    } else {
-      setQuantityError("The maximum allowed quantity is 10.");
-      setQuantity(value);
-    }
-  }, [existingProduct?.quantity]);
+  const handleUpdateQuantity = useCallback(
+    (event) => {
+      const value = Number(event.target.value);
+      if (value >= 0 && existingProduct?.quantity <= 10) {
+        setQuantityError("");
+        setQuantity(value);
+      } else if (value === 0) {
+        setQuantityError("The quantity must be greater than zero.");
+      } else {
+        setQuantityError("The maximum allowed quantity is 10.");
+        setQuantity(value);
+      }
+    },
+    [existingProduct?.quantity],
+  );
 
   useEffect(() => {
     if (existingProduct?.quantity && existingProduct.quantity + quantity > 10) {
@@ -72,7 +75,7 @@ const ProductDescription = () => {
   return (
     <div className="product-description">
       <button className="go-home margin-bottom" onClick={gotoProductsPage}>
-      Go back to the Products Page
+        Go back to the Products Page
       </button>
       <div
         className={`product-image ${isZoomed ? "zoomed" : ""}`}
