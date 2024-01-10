@@ -3,8 +3,8 @@ import "./App.css";
 import catalog from "./products.json";
 import AppContext from "./context/Context";
 import ProductCard from "./components/ProductCard";
-import Cart from "./components/Cart";
-import ProductDescription from "./components/ProductDescription";
+import Cart from "./pages/Cart";
+import ProductDescription from "./pages/ProductDescription";
 
 // App component
 function App() {
