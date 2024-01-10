@@ -3,7 +3,7 @@
     {
       "name": "iPhone 15 Pro Max",
       "description": "The latest iPhone with advanced features and powerful performance.",
-      "price": "$1,199.99",
+      "price": "$1199.99",
       "id": 1,
       "imageUrl": "https://m.media-amazon.com/images/I/81dT7CUY6GL._AC_UY218_.jpg",
       "ratings": 4.7,
@@ -30,7 +30,7 @@
     {
       "name": "Samsung Galaxy S22",
       "description": "A high-end smartphone with a stunning display and cutting-edge camera features.",
-      "price": "$1,099.99",
+      "price": "$1099.99",
       "id": 4,
       "imageUrl": "https://m.media-amazon.com/images/I/41e8Xk+am-L._SY300_SX300_.jpg",
       "ratings": 3.8,
@@ -48,7 +48,7 @@
     {
       "name": "Dell XPS 13",
       "description": "Ultra-thin and powerful laptop with a stunning InfinityEdge display.",
-      "price": "$1,499.99",
+      "price": "$1499.99",
       "id": 6,
       "imageUrl": "https://m.media-amazon.com/images/I/61rvR2b3flL._AC_UY436_FMwebp_QL65_.jpg",
       "ratings": 1.5,
@@ -57,7 +57,7 @@
     {
       "name": "Canon EOS R5",
       "description": "Mirrorless camera with 8K video recording capabilities and advanced autofocus.",
-      "price": "$3,899.99",
+      "price": "$3899.99",
       "id": 7,
       "imageUrl": "https://m.media-amazon.com/images/I/61lKwvtzRzL._AC_UY436_FMwebp_QL65_.jpg",
       "ratings": 4.6,
@@ -75,7 +75,7 @@
     {
       "name": "LG C1 OLED TV",
       "description": "4K OLED TV with stunning picture quality and Dolby Vision support.",
-      "price": "$2,499.99",
+      "price": "$2499.99",
       "id": 8,
       "imageUrl": "https://m.media-amazon.com/images/I/71tU03UNI1L._AC_UY436_FMwebp_QL65_.jpg",
       "ratings": 4.8,
@@ -102,7 +102,7 @@
     {
       "name": "Microsoft Surface Laptop 4",
       "description": "Sleek and powerful laptop with a high-resolution PixelSense touchscreen.",
-      "price": "$1,299.99",
+      "price": "$1299.99",
       "id": 11,
       "imageUrl": "https://m.media-amazon.com/images/I/717wZ9Wh4eL._AC_UY436_FMwebp_QL65_.jpg",
       "ratings": 4.5,
