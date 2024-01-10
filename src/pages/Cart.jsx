@@ -73,7 +73,7 @@ const Cart = () => {
                   alt={item.name}
                 />
                 <span className="full-width">
-                  {item.name} - ${item.price}
+                  {item.name} - {item.price}
                   <p>Quantity: {item.quantity}</p>
                   <span className="float-right">
                     <button onClick={() => decrementQuantity(index)}>-</button>
